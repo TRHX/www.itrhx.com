@@ -1,0 +1,361 @@
+/* css for www.itrhx.cn */
+
+@charset "UTF-8";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  color: #484848;
+  font-size: 14px;
+  font-family: "Microsoft YaHei", "PingFang SC", "WenQuanYi Micro Hei", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; /* TODO */
+}
+
+/* .main */
+@keyframes show {
+  0% {
+    transform: translate3d(0, -25px, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+/* .main */
+@keyframes drop {
+  0% {
+    transform-origin: top right;
+    transform: rotateZ(0deg);
+  }
+  5% {
+    transform: rotateZ(-108deg);
+  }
+  10% {
+    transform: rotateZ(-22deg);
+  }
+  15% {
+    transform: rotateZ(-91deg);
+  }
+  20% {
+    transform: rotateZ(-35deg);
+  }
+  25% {
+    transform: rotateZ(-80deg);
+  }
+  30% {
+    transform: rotateZ(-44deg);
+  }
+  35% {
+    transform: rotateZ(-73deg);
+  }
+  40% {
+    transform: rotateZ(-50deg);
+  }
+  45% {
+    transform: rotateZ(-68deg);
+  }
+  50% {
+    transform: rotateZ(-54deg);
+  }
+  55% {
+    transform: rotateZ(-65deg);
+  }
+  60% {
+    transform: rotateZ(-56deg);
+  }
+  65% {
+    transform: rotateZ(-63deg);
+  }
+  70% {
+    transform: rotateZ(-58deg);
+  }
+  75% {
+    transform: rotateZ(-61deg);
+  }
+  80% {
+    top: 0%;
+    bottom: 20%;
+    transform: rotateZ(-60deg);
+  }
+  100% {
+    transform-origin: top right;
+    top: 200%;
+    bottom: -80%;
+    transform: rotateZ(-60deg);
+  }
+}
+
+/* #bg-gradient */
+@keyframes bg {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* #fold::before */
+@keyframes fold {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 41px;
+    height: 41px;
+  }
+}
+
+/* .profile-logo */
+@keyframes logo {
+  0% {
+    transform: translate3d(-157px, 0, 0) rotate3d(0, 0, 1, -180deg);
+  }
+  50% {
+    transform: translate3d(79px, 0, 0) rotate3d(0, 0, 1, 90deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* .profile-title:hover */
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.main {
+  width: 28rem;
+  max-height: 15rem;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 20%;
+  right: 0;
+  animation: show 1.2s ease-out backwards 0.8s; /* 等背景先显示 */
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: #565a5f;
+}
+
+#bg-gradient {
+  z-index: -2;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(45deg, #12b1ea 0%, #299a0b 100%);
+  transition: all 0.3s; /* 只在 IE 有效 */
+  animation: bg 0.8s ease-in;
+}
+
+.profile {
+  text-align: center;
+  background-color: #fff;
+  opacity: 0.75;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+}
+
+.profile:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.profile-image {
+  width: 100%;
+  height: 90px;
+  background-size: cover;
+  background-color: #2c3e50;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#fold {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 41px;
+  height: 41px;
+  outline: none;
+}
+
+#fold::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 41px;
+  height: 41px;
+  background: linear-gradient(
+    -135deg,
+    white 45%,
+    #aaa 50%,
+    #ccc 55%,
+    white 80%
+  );
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  animation: fold 2s ease-in-out backwards 2s; /* 等背景和主区先显示 */
+  transition: all 3s ease-out;
+  opacity: 0.75;
+}
+
+#fold:hover::before,
+#fold:focus::before {
+  width: 0;
+  height: 0;
+  transition: all 0.3s ease-in;
+}
+
+/* body { overflow: hidden; } */
+@media (max-width: 479px) {
+  #tape {
+    display: none !important;
+  }
+}
+
+.profile-inner {
+  padding: 0 10px 10px 10px;
+}
+
+.profile-logo {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: -50px;
+  animation: logo 1.2s ease-out backwards 0.8s; /* 和主区同时显示 */
+  transition: all 1.2s;
+}
+
+.profile-logo:hover,
+.profile-logo:focus {
+  transform: rotate(-360deg);
+}
+
+.profile-logo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 0px solid #fff;
+  transition: all 0.6s;
+  /* border: 3px solid;
+  border-color: aqua;*/
+}
+
+.profile-logo img:hover {
+  box-shadow: 0px 0px 8px #2196f3;
+}
+
+.profile-title {
+  font-size: 150%;
+  line-height: 1.2;
+  margin: 16px 0 12px 0;
+}
+
+.profile-title:hover {
+  animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.profile-title span:nth-child(1),
+.profile-title span:nth-child(5) {
+  color: #4285f4;
+}
+.profile-title span:nth-child(3),
+.profile-title span:nth-child(9) {
+  color: #ea4335;
+}
+.profile-title span:nth-child(4),
+.profile-title span:nth-child(10) {
+  color: #fbbc05;
+}
+.profile-title span:nth-child(6),
+.profile-title span:nth-child(11) {
+  color: #34a853;
+}
+.profile-title span:nth-child(2),
+.profile-title span:nth-child(7),
+.profile-title span:nth-child(8) {
+  color: #4c4c4c;
+}
+
+.profile-description {
+  line-height: 1.2;
+}
+
+.links {
+  margin: 20px 0 10px 0;
+}
+
+.links a {
+  margin: 0 5px;
+  font-size: 15px;
+}
+
+#footer {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1em;
+  padding-top: 1em;
+  opacity: 0.5;
+}
+
+#footer a {
+  color: #ffffff;
+}
+
+#footer a:hover {
+  color: #4c4c4c;
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .main {
+    width: 28rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .main {
+    width: 98%;
+  }
+}

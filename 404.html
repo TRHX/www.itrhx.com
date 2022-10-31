@@ -1,0 +1,106 @@
+<!-- 
+          _____                   _______                   _____          
+          /\    \                 /::\    \                 /\    \         
+         /::\    \               /::::\    \               /::\    \        
+        /::::\    \             /::::::\    \             /::::\    \       
+       /::::::\    \           /::::::::\    \           /::::::\    \      
+      /:::/\:::\    \         /:::/~~\:::\    \         /:::/\:::\    \     
+     /:::/__\:::\    \       /:::/    \:::\    \       /:::/__\:::\    \    
+    /::::\   \:::\    \     /:::/    / \:::\    \     /::::\   \:::\    \   
+   /::::::\   \:::\    \   /:::/____/   \:::\____\   /::::::\   \:::\    \  
+  /:::/\:::\   \:::\ ___\ |:::|    |     |:::|    | /:::/\:::\   \:::\ ___\ 
+ /:::/__\:::\   \:::|    ||:::|____|     |:::|    |/:::/__\:::\   \:::|    |
+ \:::\   \:::\  /:::|____| \:::\    \   /:::/    / \:::\   \:::\  /:::|____|
+  \:::\   \:::\/:::/    /   \:::\    \ /:::/    /   \:::\   \:::\/:::/    / 
+   \:::\   \::::::/    /     \:::\    /:::/    /     \:::\   \::::::/    /  
+    \:::\   \::::/    /       \:::\__/:::/    /       \:::\   \::::/    /   
+     \:::\  /:::/    /         \::::::::/    /         \:::\  /:::/    /    
+      \:::\/:::/    /           \::::::/    /           \:::\/:::/    /     
+       \::::::/    /             \::::/    /             \::::::/    /      
+        \::::/    /               \::/____/               \::::/    /       
+         \::/____/                 ~~                      \::/____/        
+          ~~                                                ~~              
+                                                                            
+www.itrhx.com | www.itbob.cn | TRHX • BOB | 网页原作者 lmintlcx | www.lmintlcx.com
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>404 NOT FOUND</title>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">  
+  <style>
+    body {
+      margin: 0;
+      color: #fff;
+      background-color: #1e90ff;
+      font-family: "Microsoft YaHei", "PingFang SC", "WenQuanYi Micro Hei", sans-serif;
+    }
+
+    #main {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      max-width: 480px;
+    }
+
+    #main a {
+      text-decoration: none;
+      color: #ecf0f1;
+      background: #27ae60;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 2px;
+      font-weight: 700;
+      margin: 20px 0;
+      white-space: nowrap;
+      transition: all 0.3s;
+    }
+
+    #main a:hover {
+      color: #ffffff;
+      background: #2ecc71;
+    }
+
+    #main #cd {
+      color: #ccc;
+      font-size: smaller;
+    }
+
+    @media (max-width: 599px) {
+      #main {
+        width: 98%;
+      }
+    }
+  </style>
+  <script>
+    function CountDown() {
+      var time = document.getElementById("time");
+      if (time.innerHTML <= 1) {
+        window.location.href = "/";
+      } else {
+        time.innerHTML = time.innerHTML - 1;
+      }
+    }
+    window.setInterval("CountDown()", 1000);
+  </script>
+</head>
+
+<body>
+  <div id="main">
+    <h1>Error 404 - 页面未找到</h1>
+    <p>当前请求的网页可能已经被移动, 删除, 改名或者从没存在过。</p>
+    <a href="/">返回首页</a>
+    &nbsp;&nbsp;&nbsp;
+    <span id="cd">将在 <span id="time">10</span> 秒后跳转</span>
+  </div>
+</body>
+
+</html>
