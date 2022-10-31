@@ -1,11 +1,11 @@
-// js for www.itrhx.cn
+// js for www.itrhx.com
 
 function webPageJump() {
-  var t = 30; // 跳转倒数时间
+  var t = 10;  // 跳转倒数时间
   document.getElementById("count-down").innerHTML = t;
   var interval = setInterval(function () {
     if (0 == t) {
-      location.href = "https://www.itbob.cn/"; // 跳转URL
+      location.href = "https://www.itbob.cn/";  // 跳转URL
       window.clearInterval(interval);
     } else {
       t -= 1;
@@ -62,6 +62,3 @@ bg_pic.ondblclick = function () {
   bg_pic.style.opacity = 0;
   setTimeout(function () { bg_pic.style.display = "none"; }, 250);
 }
-
-
-
